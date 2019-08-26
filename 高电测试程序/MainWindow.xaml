@@ -1,0 +1,85 @@
+﻿<Window x:Class="高电测试程序.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:高电测试程序"
+        xmlns:st="https://github.com/canton7/Stylet"
+        mc:Ignorable="d"
+    Title="MainView" Height="450" Width="800"
+    >
+    <Window.Resources>
+        <Style TargetType="TextBlock" x:Key="TextBoxStyle">
+            <Setter Property="TextAlignment" Value="Center"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="Margin" Value="5"></Setter>
+            <Setter Property="FontSize" Value="23"></Setter>
+            <Setter Property="FontFamily" Value="kaiti"></Setter>
+        </Style>
+
+        <Style TargetType="TextBox" x:Key="TextBoxStyle1">
+            <Setter Property="TextAlignment" Value="Center"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="FontSize" Value="20"></Setter>
+            <Setter Property="FontFamily" Value="kaiti"></Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="6*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="3*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="测量通道" Style="{StaticResource TextBoxStyle}"></TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="1"  Text="测量速度"  Style="{StaticResource TextBoxStyle}"></TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="2"  Text="标准测电流"  Style="{StaticResource TextBoxStyle}"></TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="3"  Text="被试测电流"  Style="{StaticResource TextBoxStyle}"></TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="4" Text="角度差"  Style="{StaticResource TextBoxStyle}"></TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="0" x:Name="t1"  Style="{StaticResource TextBoxStyle}"></TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="1"  x:Name="t2"  Style="{StaticResource TextBoxStyle}"></TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="2"  x:Name="t3"  Style="{StaticResource TextBoxStyle}"></TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="3" x:Name="t4"    Style="{StaticResource TextBoxStyle}"></TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="4"  x:Name="t5"   Style="{StaticResource TextBoxStyle}"></TextBlock>
+
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackPanel  Grid.Column="0">
+                <TextBox  Margin="5,50"></TextBox>
+                <Button Margin="5" Height="20" Content="开始测试" Click="Start_Click"></Button>
+            </StackPanel>
+            <TextBox  Grid.Column="1" Margin="5,50"></TextBox>
+            <TextBox  Grid.Column="2"  Margin="5,50"></TextBox>
+            <TextBox Grid.Column="3"  Margin="5,50"></TextBox>
+            <TextBox Grid.Column="4"  Margin="5,50"></TextBox>
+            <TextBox Grid.Column="5"  Margin="5,50"></TextBox>
+            <TextBox  Grid.Column="6" Margin="5,50"></TextBox>
+            <TextBox Grid.Column="7"  Margin="5,50"></TextBox>
+        </Grid>
+    </Grid>
+
+
+</Window>
