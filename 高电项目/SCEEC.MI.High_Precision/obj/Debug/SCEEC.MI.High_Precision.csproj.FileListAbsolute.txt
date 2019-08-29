@@ -10,3 +10,9 @@ C:\Users\My\Desktop\SCEEC\高电项目\SCEEC.MI.High_Precision\obj\Debug\SCEEC.M
 C:\Users\My\Desktop\SCEEC\高电项目\SCEEC.MI.High_Precision\obj\Debug\SCEEC.MI.High_Precision.pdb
 C:\Users\My\Desktop\SCEEC\高电项目\SCEEC.MI.High_Precision\bin\Debug\SCEEC.MI.High_Precision.dll
 C:\Users\My\Desktop\SCEEC\高电项目\SCEEC.MI.High_Precision\bin\Debug\SCEEC.MI.High_Precision.pdb
+C:\Users\My\Desktop\SCEEC\高精介损\高电项目\SCEEC.MI.High_Precision\bin\Debug\SCEEC.MI.High_Precision.dll
+C:\Users\My\Desktop\SCEEC\高精介损\高电项目\SCEEC.MI.High_Precision\bin\Debug\SCEEC.MI.High_Precision.pdb
+C:\Users\My\Desktop\SCEEC\高精介损\高电项目\SCEEC.MI.High_Precision\obj\Debug\SCEEC.MI.High_Precision.csprojAssemblyReference.cache
+C:\Users\My\Desktop\SCEEC\高精介损\高电项目\SCEEC.MI.High_Precision\obj\Debug\SCEEC.MI.High_Precision.csproj.CoreCompileInputs.cache
+C:\Users\My\Desktop\SCEEC\高精介损\高电项目\SCEEC.MI.High_Precision\obj\Debug\SCEEC.MI.High_Precision.dll
+C:\Users\My\Desktop\SCEEC\高精介损\高电项目\SCEEC.MI.High_Precision\obj\Debug\SCEEC.MI.High_Precision.pdb

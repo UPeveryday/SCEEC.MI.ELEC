@@ -10,45 +10,81 @@ namespace 高电项目.Pages
     public class ShellViewModel : Screen
     {
         // static High_PrecisionClass Testclass = new High_PrecisionClass("COM9");
-        public string TestPanel { get; set; }
-        public string TestSpeed { get; set; }
-        public string TestCurrent { get; set; }
-        public string TestMeasuredCurrent { get; set; }
-        public string TestAngle { get; set; }
-        public string TestFre { get; set; }
+       
+        #region Ui parameter data
+        public byte TestSpeed { get; set; }
+        public float TestIn { get; set; }
+        public float TestIx1 { get; set; }
+        public float TestIx2 { get; set; }
+        public float TestIx3 { get; set; }
+        public float TestIx4 { get; set; }
+        public float TestPh1 { get; set; }
+        public float TestPh2 { get; set; }
+        public float TestPh3 { get; set; }
+        public float TestPh4 { get; set; }
+        public float TestRn { get; set; }
+        public float TestRx1 { get; set; }
+        public float TestRx2 { get; set; }
+        public float TestRx3 { get; set; }
+        public float TestRx4 { get; set; }
+        public float TestFre { get; set; }
+        public float TestVoalte { get; set; }
+        public float TestPower { get; set; }
 
+        #endregion
 
-
-        //public double Pan { get; set; } = Testclass.TestPanel;//需要测试
-        //private void OpentestPort()
-        //{
-        //    Testclass.LocalPrecision.closePort();
-        //    Testclass.LocalPrecision.setSerialPort("COM9", 9600, 8, 1);
-        //    Testclass.LocalPrecision.openPort();
-        //    Testclass.LocalPrecision.DataReceived += new PortClass.SerialPortDataReceiveEventArgs(DataReceiveClient);
-        //}
-        //public void DataReceiveClient(object sender, SerialDataReceivedEventArgs e, byte[] bits)
-        //{
-        //    if (bits.Length == 19)
-        //    {
-        //        TestPanel = bits[0].ToString();
-        //        TestSpeed = bits[1].ToString();
-        //        TestCurrent = BitConverter.ToSingle(bits.Skip(2).Take(4).ToArray(), 0).ToString();
-        //        TestMeasuredCurrent = BitConverter.ToSingle(bits.Skip(6).Take(4).ToArray(), 0).ToString();
-        //        TestAngle = BitConverter.ToSingle(bits.Skip(10).Take(4).ToArray(), 0).ToString();
-        //        TestFre = BitConverter.ToSingle(bits.Skip(14).Take(4).ToArray(), 0).ToString();
-        //    }
-        //}
-        //private void StartComman()
-        //{
-        //    byte[] Issuccss = new byte[1];
-        //    byte[] TestComman = { 0x69, 0x6A, 0xd3 };
-        //    Testclass.LocalPrecision.SendCommand(TestComman, ref Issuccss, 10);
-        //}
         public void StartTest()
         {
-            TestResult.WorkTest.StartTest();
+            try
+            {
+                TestResult.WorkTest.StartTest();
+                TestResult.WorkTest.OutTestResult += WorkTest_OutTestResult1;
+            }
+            catch
+            {
+            }
+
         }
+        #region Stylet实现跳出窗口，可用于单元测试
+        private readonly IWindowManager windowManager;
+
+        public ShellViewModel(IWindowManager windowManager)
+        {
+            this.windowManager = windowManager;
+        }
+
+        public void ShowMessagebox()
+        {
+            var result = this.windowManager.ShowMessageBox("Hello");
+        }
+
+        #endregion
+        private void WorkTest_OutTestResult1(byte[] result)
+        {
+            if (result.Length == 19)
+            {
+                ViewSources vs = new ViewSources(result);
+                TestFre = vs.TestFre;
+                TestVoalte = vs.TestVoalte;
+                TestIn = vs.TestIn;
+                TestIx1 = vs.TestIx1;
+                TestIx2 = vs.TestIx2;
+                TestIx3 = vs.TestIx3;
+                TestIx4 = vs.TestIx4;
+                TestPh1 = vs.TestPh1;
+                TestPh2 = vs.TestPh2;
+                TestPh3 = vs.TestPh3;
+                TestPh4 = vs.TestPh4;
+                TestRn = vs.TestRn;
+                TestRx1 = vs.TestRx1;
+                TestRx2 = vs.TestRx2;
+                TestRx3 = vs.TestRx3;
+                TestRx4 = vs.TestRx4;
+                TestSpeed = vs.TestSpeed;
+            }
+        }
+
+
     }
 
 }

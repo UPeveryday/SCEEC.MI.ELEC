@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\My\Desktop\SCEEC\高电项目\obj\Debug\
+C:\Users\My\Desktop\SCEEC\高精介损\高电项目\obj\Debug\
 高电项目
 none
 false
 DEBUG;TRACE
-C:\Users\My\Desktop\SCEEC\高电项目\App.xaml
-2-468466297
+C:\Users\My\Desktop\SCEEC\高精介损\高电项目\App.xaml
+4-316405203
 
-10-1024083153
-711515219944
-Pages\ShellView.xaml;Views\MainView.xaml;
+12-1817065221
+711959483996
+Pages\ShellView.xaml;Themes\Theme.xaml;Views\KeyBoardView.xaml;Views\MainView.xaml;
 
 True
 

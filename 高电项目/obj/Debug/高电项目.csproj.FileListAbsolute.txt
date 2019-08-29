@@ -42,7 +42,6 @@ C:\Users\My\Desktop\SCEEC\高精介损\高电项目\obj\Debug\高电项目.cspro
 C:\Users\My\Desktop\SCEEC\高精介损\高电项目\obj\Debug\Pages\ShellView.g.cs
 C:\Users\My\Desktop\SCEEC\高精介损\高电项目\obj\Debug\Views\MainView.g.cs
 C:\Users\My\Desktop\SCEEC\高精介损\高电项目\obj\Debug\App.g.cs
-C:\Users\My\Desktop\SCEEC\高精介损\高电项目\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\My\Desktop\SCEEC\高精介损\高电项目\obj\Debug\高电项目_MarkupCompile.cache
 C:\Users\My\Desktop\SCEEC\高精介损\高电项目\obj\Debug\高电项目_MarkupCompile.lref
 C:\Users\My\Desktop\SCEEC\高精介损\高电项目\obj\Debug\App.baml
@@ -56,3 +55,7 @@ C:\Users\My\Desktop\SCEEC\高精介损\高电项目\obj\Debug\高电项目.cspro
 C:\Users\My\Desktop\SCEEC\高精介损\高电项目\obj\Debug\高电项目.csproj.CopyComplete
 C:\Users\My\Desktop\SCEEC\高精介损\高电项目\obj\Debug\高电项目.exe
 C:\Users\My\Desktop\SCEEC\高精介损\高电项目\obj\Debug\高电项目.pdb
+C:\Users\My\Desktop\SCEEC\高精介损\高电项目\obj\Debug\Views\KeyBoardView.g.cs
+C:\Users\My\Desktop\SCEEC\高精介损\高电项目\obj\Debug\Views\KeyBoardView.baml
+C:\Users\My\Desktop\SCEEC\高精介损\高电项目\obj\Debug\Themes\Theme.baml
+C:\Users\My\Desktop\SCEEC\高精介损\高电项目\obj\Debug\GeneratedInternalTypeHelper.g.cs

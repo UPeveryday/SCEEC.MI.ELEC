@@ -6,8 +6,14 @@
     <Application.Resources>
         <s:ApplicationLoader>
             <s:ApplicationLoader.Bootstrapper>
-                <local:Bootstrapper />
+                <local:Bootstrapper  />
             </s:ApplicationLoader.Bootstrapper>
         </s:ApplicationLoader>
+        <!--<ResourceDictionary >
+            <ResourceDictionary.MergedDictionaries >
+                <ResourceDictionary Source="Themes/Theme.xaml" ></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>-->
     </Application.Resources>
+   
 </Application>

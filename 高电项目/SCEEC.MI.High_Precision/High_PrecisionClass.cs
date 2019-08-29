@@ -7,7 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 namespace SCEEC.MI.High_Precision
 {
-
+    public delegate void ResultDelegate(byte[] result);
     public enum TestKind
     {
         SetTestChannel,
@@ -41,31 +41,26 @@ namespace SCEEC.MI.High_Precision
 
 
         public readonly string ComPort;
-        public  byte TestPanel { get; set; }
-        public  byte TestSpeed { get; set; }
-        public  float TestCurrent { get; set; }
-        public  float TestMeasuredCurrent { get; set; }
-        public  float TestAngle { get; set; }
-        public  float TestFre { get; set; }
+      
+
         public High_PrecisionClass()
         {
             string[] cp = GetPortNames();
             this.ComPort = cp[cp.Length - 1];
-
+            OpenPort();
         }
         public High_PrecisionClass(string comPortName)
         {
             this.ComPort = comPortName;
-            LocalPrecision.setSerialPort(comPortName, 9600, 8, 1);
+            LocalPrecision.setSerialPort(comPortName, 460800, 8, 1);
 
         }
         public bool OpenPort()
         {
             bool IsSuccess = true;
-            LocalPrecision.closePort();
             try
             {
-                //  LocalPrecision.setSerialPort(ComPort, 9600, 8, 1);
+                LocalPrecision.setSerialPort(ComPort, 460800, 8, 1);
                 LocalPrecision.openPort();
                 LocalPrecision.DataReceived += new PortClass.SerialPortDataReceiveEventArgs(DataReceive);
             }
@@ -119,31 +114,32 @@ namespace SCEEC.MI.High_Precision
         {
             LocalPrecision.closePort();
         }
-
+        // ResultDelegate testresults = ReturnTestResult;
+        public event ResultDelegate OutTestResult;
+        private static byte[] ReturnTestResult(byte[] bits)
+        {
+            return bits;
+        }
         public void DataReceive(object sender, SerialDataReceivedEventArgs e, byte[] bits)
         {
-            if (bits.Length == 19)
+            if (bits.Length == 55)
             {
-                TestPanel = bits[0];
-                TestSpeed = bits[1];
-                TestCurrent = BitConverter.ToSingle(bits.Skip(2).Take(4).ToArray(), 0);
-                TestMeasuredCurrent = BitConverter.ToSingle(bits.Skip(6).Take(4).ToArray(), 0);
-                TestAngle = BitConverter.ToSingle(bits.Skip(10).Take(4).ToArray(), 0);
-                TestFre = BitConverter.ToSingle(bits.Skip(14).Take(4).ToArray(), 0);
+                //testresults(bits);
+                OutTestResult(bits);
             }
         }
 
         public byte StartTest()
         {
-            LocalPrecision.closePort();
-            LocalPrecision.openPort();
+            //LocalPrecision.closePort();
+            //LocalPrecision.openPort();
             OpenPort();
             byte[] Issuccss = new byte[1];
             byte[] TestComman = { 0x69, 0x6A, CheckData(new byte[2] { 0x69, 0x6A }) };
-            if (0 < LocalPrecision.SendCommand(TestComman, ref Issuccss, 10))
+            LocalPrecision.SendCommand(TestComman, ref Issuccss, 10);
+            if (Issuccss[0] == 0x01)
                 return Issuccss[0];
-            else
-                return 0x04;
+            else return 0x04;
         }
 
         public byte ChangeTestChannel(byte testChannel)
@@ -266,7 +262,7 @@ namespace SCEEC.MI.High_Precision
 
     public static class TestResult
     {
-        public static High_PrecisionClass WorkTest = new High_PrecisionClass("COM9");
+        public static High_PrecisionClass WorkTest = new High_PrecisionClass();
 
     }
 

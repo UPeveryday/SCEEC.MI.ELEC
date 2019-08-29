@@ -6,7 +6,7 @@ using 高电项目.ViewModels;
 
 namespace 高电项目
 {
-    public class Bootstrapper : Bootstrapper<ShellViewModel>
+    public class Bootstrapper : Bootstrapper<MainViewModel>
     {
         protected override void ConfigureIoC(IStyletIoCBuilder builder) 
         {
