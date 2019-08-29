@@ -26,6 +26,21 @@ namespace SCEEC.MI.High_Precision
         public float TestFre { get; set; }
         public float TestVoalte { get; set; }
         public float TestPower { get; set; }
+        public double TestU0 { get; set; }
+        public double TestCn { get; set; }
+        public double TestCx1 { get; set; }
+        public double TestCx2 { get; set; }
+        public double TestCx3 { get; set; }
+        public double TestCx4 { get; set; }
+
+
+        public double Testθ0 { get; set; }
+        public double TestTan1 { get; set; }
+        public double TestTan2 { get; set; }
+        public double TestTan3 { get; set; }
+        public double TestTan4 { get; set; }
+
+
         public ViewSources(byte[] bits)
         {
             TestFre = BitConverter.ToSingle(bits.Skip(0).Take(4).ToArray(), 0);
@@ -46,6 +61,15 @@ namespace SCEEC.MI.High_Precision
             TestRx3 = bits[51];
             TestRx4 = bits[52];
             TestSpeed = bits[53];
+            TestU0 = TestIn / (2 * Math.PI * TestFre * TestCn);
+            TestCx1 = TestIx1 / (2 * Math.PI * TestU0);
+            TestCx2 = TestIx2 / (2 * Math.PI * TestU0);
+            TestCx3 = TestIx3 / (2 * Math.PI * TestU0);
+            TestCx4 = TestIx4 / (2 * Math.PI * TestU0);
+            TestTan1 =Math.Tan(TestPh1 - Testθ0);
+            TestTan2 =Math.Tan(TestPh2 - Testθ0);
+            TestTan3 =Math.Tan(TestPh3 - Testθ0);
+            TestTan4 =Math.Tan(TestPh4 - Testθ0);
         }
         ~ViewSources()
         {

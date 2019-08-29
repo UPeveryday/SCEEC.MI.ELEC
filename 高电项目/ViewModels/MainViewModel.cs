@@ -29,9 +29,20 @@ namespace 高电项目.ViewModels
         public float TestFre { get; set; }
         public float TestVoalte { get; set; }
         public float TestPower { get; set; }
+        public double TestU0 { get; set; }
+        public double TestCn { get; set; }
+        public double TestCx1 { get; set; }
+        public double TestCx2 { get; set; }
+        public double TestCx3 { get; set; }
+        public double TestCx4 { get; set; }
 
+
+        public double Testθ0 { get; set; }
+        public double TestTan1 { get; set; }
+        public double TestTan2 { get; set; }
+        public double TestTan3 { get; set; }
+        public double TestTan4 { get; set; }
         #endregion
-
         public void StartTest()
         {
             try
@@ -60,7 +71,7 @@ namespace 高电项目.ViewModels
         #endregion
         private void WorkTest_OutTestResult1(byte[] result)
         {
-            if (result.Length == 19)
+            if (result.Length == 55)
             {
                 ViewSources vs = new ViewSources(result);
                 TestFre = vs.TestFre;
@@ -80,6 +91,16 @@ namespace 高电项目.ViewModels
                 TestRx3 = vs.TestRx3;
                 TestRx4 = vs.TestRx4;
                 TestSpeed = vs.TestSpeed;
+                TestU0 = vs.TestU0;
+                TestCx1 = vs.TestCx1;
+                TestCx2 = vs.TestCx2;
+                TestCx3 = vs.TestCx3;
+                TestCx4 = vs.TestCx4;
+                Testθ0 = vs.Testθ0;
+                TestTan1 = vs.TestTan1;
+                TestTan2 = vs.TestTan2;
+                TestTan3 = vs.TestTan3;
+                TestTan4 = vs.TestTan4;
             }
         }
 

@@ -8,31 +8,9 @@
         xmlns:s="clr-namespace:高电项目.ViewModels"
         mc:Ignorable="d"
         d:DataContext="{d:DesignInstance local:MainViewModel}"
-    Title="MainView" Height="450" Width="800"
+    Title="MainView" Height="450" Width="800" Loaded="{st:Action StartTest}"
     >
     <Window.Resources>
-        <Style TargetType="{x:Type Button}" x:Key="DefaultButton">
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontFamily" Value="Microsoft YaHei"/>
-            <Setter Property="FontSize" Value="12"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="5,5,5,5">
-                            <Border.Background>
-                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                                    <GradientStop Color="#FF32515B" Offset="0.0" />
-                                    <GradientStop Color="#FF274954" Offset="0.2" />
-                                    <GradientStop Color="#FF32515B" Offset="0.0" />
-                                </LinearGradientBrush>
-                            </Border.Background>
-                            <ContentPresenter Content="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" VerticalAlignment="Center" ></ContentPresenter>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
         <Style TargetType="TextBlock" x:Key="TextBoxStyle">
             <Setter Property="TextAlignment" Value="Center"></Setter>
             <Setter Property="VerticalAlignment" Value="Center"></Setter>
@@ -42,82 +20,78 @@
             <Setter Property="FontFamily" Value="kaiti"></Setter>
         </Style>
         <Style TargetType="TextBox" x:Key="TextBoxStyle1">
-            <Setter Property="TextAlignment" Value="Center"></Setter>
-            <Setter Property="VerticalAlignment" Value="Center"></Setter>
-            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
-            <Setter Property="FontSize" Value="20"></Setter>
-            <Setter Property="FontFamily" Value="kaiti"></Setter>
+            <Setter Property="Margin" Value="8"></Setter>
         </Style>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="4*"></RowDefinition>
-            <RowDefinition Height="6*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"></ColumnDefinition>
-                <ColumnDefinition Width="1*"></ColumnDefinition>
-                <ColumnDefinition Width="1*"></ColumnDefinition>
-                <ColumnDefinition Width="1*"></ColumnDefinition>
-                <ColumnDefinition Width="1*"></ColumnDefinition>
-                <ColumnDefinition Width="1*"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"></RowDefinition>
                 <RowDefinition Height="3*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="3*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="3*"></RowDefinition>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" Grid.Column="0" Text="测量通道" Style="{StaticResource TextBoxStyle}"></TextBlock>
-            <TextBlock Grid.Row="0" Grid.Column="1"  Text="测量速度"  Style="{StaticResource TextBoxStyle}"></TextBlock>
-            <TextBlock Grid.Row="0" Grid.Column="2"  Text="频率"  Style="{StaticResource TextBoxStyle}"></TextBlock>
-            <TextBlock Grid.Row="0" Grid.Column="3"  Text="被试侧电流"  Style="{StaticResource TextBoxStyle}"></TextBlock>
-            <TextBlock Grid.Row="0" Grid.Column="4" Text="介损值"  Style="{StaticResource TextBoxStyle}"></TextBlock>
-            <TextBlock Grid.Row="0" Grid.Column="5" Text="电压值"  Style="{StaticResource TextBoxStyle}"></TextBlock>
-            <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding TestPanel,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxStyle}"></TextBlock>
-            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding TestSpeed,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxStyle}"></TextBlock>
-            <TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding TestFre,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxStyle}"></TextBlock>
-            <TextBlock Grid.Row="1" Grid.Column="3"  Text="{Binding TestMeasuredCurrent,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxStyle}"></TextBlock>
-            <TextBlock Grid.Row="1" Grid.Column="4"  Text="{Binding TestAngle,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxStyle}"></TextBlock>
-            <TextBlock Grid.Row="1" Grid.Column="5"  Text="{Binding Volate,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxStyle}"></TextBlock>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBox Grid.Row="1" Grid.Column="0" Style="{StaticResource TextBoxStyle1}"></TextBox>
+            <TextBox Grid.Row="1" Grid.Column="1" Style="{StaticResource TextBoxStyle1}"></TextBox>
+            <TextBox Grid.Row="1" Grid.Column="2" Style="{StaticResource TextBoxStyle1}"></TextBox>
+            <TextBox Grid.Row="1" Grid.Column="3" Style="{StaticResource TextBoxStyle1}"></TextBox>
+            <TextBox Grid.Row="3" Grid.Column="0" Style="{StaticResource TextBoxStyle1}"></TextBox>
+            <TextBox Grid.Row="3" Grid.Column="1" Style="{StaticResource TextBoxStyle1}"></TextBox>
+            <TextBox Grid.Row="3" Grid.Column="2" Style="{StaticResource TextBoxStyle1}"></TextBox>
+            <TextBox Grid.Row="3" Grid.Column="3" Style="{StaticResource TextBoxStyle1}"></TextBox>
+            <TextBox Grid.Row="5" Grid.Column="0" Style="{StaticResource TextBoxStyle1}"></TextBox>
+            <TextBox Grid.Row="5" Grid.Column="1" Style="{StaticResource TextBoxStyle1}"></TextBox>
+            <TextBox Grid.Row="5" Grid.Column="2" Style="{StaticResource TextBoxStyle1}"></TextBox>
+            <TextBox Grid.Row="5" Grid.Column="3" Style="{StaticResource TextBoxStyle1}"></TextBox>
 
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Uo" Style="{StaticResource TextBoxStyle}"></TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="Frequency" Style="{StaticResource TextBoxStyle}"></TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="2" Text="Power" Style="{StaticResource TextBoxStyle}"></TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="3" Text="。。。" Style="{StaticResource TextBoxStyle}"></TextBlock>
+
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Cx1" Style="{StaticResource TextBoxStyle}"></TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="1" Text="Cx2" Style="{StaticResource TextBoxStyle}"></TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="2" Text="Cx3" Style="{StaticResource TextBoxStyle}"></TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="3" Text="Cx4" Style="{StaticResource TextBoxStyle}"></TextBlock>
+
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="Tanθ₁ %" Style="{StaticResource TextBoxStyle}"></TextBlock>
+            <TextBlock Grid.Row="4" Grid.Column="1" Text="Tanθ₂ %" Style="{StaticResource TextBoxStyle}"></TextBlock>
+            <TextBlock Grid.Row="4" Grid.Column="2" Text="Tanθ₃ %" Style="{StaticResource TextBoxStyle}"></TextBlock>
+            <TextBlock Grid.Row="4" Grid.Column="3" Text="Tanθ4 %" Style="{StaticResource TextBoxStyle}"></TextBlock>
         </Grid>
-
-        <Grid Grid.Row="1">
+        <Border Grid.Row="1" BorderThickness="1" BorderBrush="Azure"></Border>
+        <Grid Grid.Row="1" >
             <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
+                <RowDefinition Height="46*"></RowDefinition>
+                <RowDefinition Height="6*"/>
+                <RowDefinition Height="53*"></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"></ColumnDefinition>
                 <ColumnDefinition Width="1*"></ColumnDefinition>
                 <ColumnDefinition Width="1*"></ColumnDefinition>
                 <ColumnDefinition Width="1*"></ColumnDefinition>
-                <ColumnDefinition Width="1*"></ColumnDefinition>
-                <ColumnDefinition Width="1*"></ColumnDefinition>
-                <ColumnDefinition Width="1*"></ColumnDefinition>
-                <ColumnDefinition Width="1*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Margin="15" Grid.Row="2"   Content="开始测试" st:View.ActionTarget="{Binding KeyBoardViewModel}" Click="{st:Action Cw}"></Button>
-            <TextBox  Grid.Column="0" Text="{Binding Pan,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="5"></TextBox>
-            <TextBox  Grid.Column="1" Text="{Binding Spe,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="5"></TextBox>
-            <TextBox  Grid.Column="2" Text="{Binding Cn,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="5"></TextBox>
-            <TextBox Grid.Column="3" Text="{Binding Vol,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="5"></TextBox>
-            <TextBox Grid.Column="4" Text="{Binding Fre,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="5" d:IsLocked="True"></TextBox>
-            <TextBox Grid.Column="5" Text="{Binding Cur,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="5"></TextBox>
-            <TextBox  Grid.Column="6" Margin="5"></TextBox>
-            <TextBox Grid.Column="7"  Margin="5"></TextBox>
-
-            <Button Grid.Row="1" Content="测量通道" Style="{StaticResource DefaultButton}" Click="{st:Action ChangePan}" Grid.Column="0" Margin="5,20"></Button>
-            <Button Grid.Row="1" Content="测量速度" Style="{StaticResource DefaultButton}"  Click="{st:Action ChangeSpe}"  Grid.Column="1" Margin="5,20"></Button>
-            <Button Grid.Row="1" Content="Cn"  Style="{StaticResource DefaultButton}" Click="{st:Action ChangeCn}"  Grid.Column="2" Margin="5,20"></Button>
-            <Button Grid.Row="1" Content="电压"  Style="{StaticResource DefaultButton}" Click="{st:Action ChangeVol}"  Grid.Column="3" Margin="5,20"></Button>
-            <Button Grid.Row="1" Content="频率"  Style="{StaticResource DefaultButton}" Click="{st:Action ChangeFreq}" Grid.Column="4" Margin="5,20"></Button>
-            <Button Grid.Row="1" Content="电流" Style="{StaticResource DefaultButton}"  Grid.Column="5" Margin="5,20"></Button>
-            <Button Grid.Row="1" Content="升压" Style="{StaticResource DefaultButton}"  Grid.Column="6" Margin="5,20"></Button>
-            <Button Grid.Row="1" Content="降压" Style="{DynamicResource DefaultButton}"  Command="{st:Action ShowSheelWindow}" Grid.Column="7" Margin="5,20"></Button>
+            <TextBox Grid.Row="0" Grid.Column="0" Style="{StaticResource TextBoxStyle1}" Margin="8,8,8,2" ></TextBox>
+            <TextBox Grid.Row="0" Grid.Column="1"  Style="{StaticResource TextBoxStyle1}" Margin="8,8,8,2" ></TextBox>
+            <TextBox Grid.Row="0" Grid.Column="2"  Style="{StaticResource TextBoxStyle1}" Margin="8,8,8,2" ></TextBox>
+            <TextBox Grid.Row="0" Grid.Column="3"  Style="{StaticResource TextBoxStyle1}" Margin="8,8,8,2" ></TextBox>
+            <Button Grid.Column="0" Grid.Row="2" Content="Change Cn" Style="{DynamicResource DefaultButton}"></Button>
+            <Button Grid.Column="1" Grid.Row="2" Content="Change Cn θ°" Style="{DynamicResource DefaultButton}"></Button>
+            <Button Grid.Column="2" Grid.Row="2" Content="Change Channel" Style="{DynamicResource DefaultButton}"></Button>
+            <Button Grid.Column="3" Grid.Row="2" Content="Change Speed" Style="{DynamicResource DefaultButton}"></Button>
         </Grid>
     </Grid>
-
-
 </Window>

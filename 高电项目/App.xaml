@@ -2,18 +2,19 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:高电项目"
-             xmlns:s="https://github.com/canton7/Stylet">
+             xmlns:s="https://github.com/canton7/Stylet" >
     <Application.Resources>
-        <s:ApplicationLoader>
-            <s:ApplicationLoader.Bootstrapper>
-                <local:Bootstrapper  />
-            </s:ApplicationLoader.Bootstrapper>
-        </s:ApplicationLoader>
-        <!--<ResourceDictionary >
-            <ResourceDictionary.MergedDictionaries >
-                <ResourceDictionary Source="Themes/Theme.xaml" ></ResourceDictionary>
+       
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary  Source="Themes/Theme.xaml" ></ResourceDictionary>
+                <s:ApplicationLoader>
+                    <s:ApplicationLoader.Bootstrapper>
+                        <local:Bootstrapper  />
+                    </s:ApplicationLoader.Bootstrapper>
+                </s:ApplicationLoader>
             </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>-->
+        </ResourceDictionary>
     </Application.Resources>
    
 </Application>
