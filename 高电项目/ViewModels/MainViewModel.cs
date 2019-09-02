@@ -11,7 +11,7 @@ namespace 高电项目.ViewModels
     public class MainViewModel : Screen
     {
         #region Ui parameter data
-        public string TestSpeed { get; set; }
+        public int TestSpeed { get; set; }
         public float TestIn { get; set; }
         public float TestIx1 { get; set; }
         public float TestIx2 { get; set; }
@@ -37,26 +37,22 @@ namespace 高电项目.ViewModels
         public double TestCx4 { get; set; }
 
 
-        public double Testθ0 { get; set; }
+        public string Testθ0 { get; set; }
         public double TestTan1 { get; set; }
         public double TestTan2 { get; set; }
         public double TestTan3 { get; set; }
         public double TestTan4 { get; set; }
-        public string TestChannel { get; set; }
+        public int TestChannel { get; set; }
         #endregion
 
         #region 开始测试
         public void StartTest()
         {
-            try
-            {
-                TestResult.WorkTest.StartTest();
-                TestResult.WorkTest.OutTestResult += WorkTest_OutTestResult1;
-            }
-            catch
-            {
-            }
-
+            byte IsPort;
+            IsPort = TestResult.WorkTest.StartTest();
+            if (IsPort == 0)
+                throw new Exception("串口打开失败");
+            TestResult.WorkTest.OutTestResult += WorkTest_OutTestResult1;
         }
         #endregion
 
@@ -97,13 +93,13 @@ namespace 高电项目.ViewModels
                 TestRx2 = vs.TestRx2;
                 TestRx3 = vs.TestRx3;
                 TestRx4 = vs.TestRx4;
-                TestSpeed = vs.TestSpeed.ToString();
+                TestSpeed = vs.TestSpeed;
                 TestU0 = vs.TestU0;
                 TestCx1 = vs.TestCx1;
                 TestCx2 = vs.TestCx2;
                 TestCx3 = vs.TestCx3;
                 TestCx4 = vs.TestCx4;
-                Testθ0 = vs.Testθ0;
+                Testθ0 = vs.Testθ0.ToString();
                 TestTan1 = vs.TestTan1;
                 TestTan2 = vs.TestTan2;
                 TestTan3 = vs.TestTan3;
@@ -133,12 +129,8 @@ namespace 高电项目.ViewModels
         #region 改变测量通道
         public void ChangeChannel()
         {
-           // byte fcn = Convert.ToByte(TestChannel);
-            double fcn;//= Convert.ToDouble(TestCn);
-            bool isf = double.TryParse(TestChannel, System.Globalization.NumberStyles.Float,
-                System.Globalization.NumberFormatInfo.InvariantInfo, out fcn);
-            if (isf)
-                TestResult.WorkTest.ChangeTestChannel((byte)fcn);
+            byte fcn = Convert.ToByte(TestChannel);
+            TestResult.WorkTest.ChangeTestChannel((byte)fcn);
 
         }
         #endregion
@@ -146,13 +138,8 @@ namespace 高电项目.ViewModels
         #region 改变测量速度
         public void ChangSpeed()
         {
-            //byte fcn = Convert.ToByte(TestSpeed);
-            double fcn;//= Convert.ToDouble(TestCn);
-            bool isf = double.TryParse(TestSpeed, System.Globalization.NumberStyles.Float,
-                System.Globalization.NumberFormatInfo.InvariantInfo, out fcn);
-            if (isf)
-                TestResult.WorkTest.ChangeTestSpeed((byte)fcn);
-
+            int fcn = Convert.ToInt32(TestSpeed);
+            TestResult.WorkTest.ChangeTestSpeed((byte)fcn);
         }
         #endregion
     }

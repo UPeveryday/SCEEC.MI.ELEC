@@ -41,7 +41,7 @@ namespace SCEEC.MI.High_Precision
 
 
         public readonly string ComPort;
-      
+
 
         public High_PrecisionClass()
         {
@@ -131,9 +131,6 @@ namespace SCEEC.MI.High_Precision
 
         public byte StartTest()
         {
-            //LocalPrecision.closePort();
-            //LocalPrecision.openPort();
-            OpenPort();
             byte[] Issuccss = new byte[1];
             byte[] TestComman = { 0x69, 0x6A, CheckData(new byte[2] { 0x69, 0x6A }) };
             LocalPrecision.SendCommand(TestComman, ref Issuccss, 10);
