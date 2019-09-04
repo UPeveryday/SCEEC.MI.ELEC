@@ -59,3 +59,9 @@ C:\Users\My\Desktop\SCEEC\高精介损\高电项目\obj\Debug\Views\KeyBoardView
 C:\Users\My\Desktop\SCEEC\高精介损\高电项目\obj\Debug\Views\KeyBoardView.baml
 C:\Users\My\Desktop\SCEEC\高精介损\高电项目\obj\Debug\Themes\Theme.baml
 C:\Users\My\Desktop\SCEEC\高精介损\高电项目\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\My\Desktop\SCEEC\高精介损\高电项目\bin\Debug\MaterialDesignColors.dll
+C:\Users\My\Desktop\SCEEC\高精介损\高电项目\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\My\Desktop\SCEEC\高精介损\高电项目\bin\Debug\ShowMeTheXAML.dll
+C:\Users\My\Desktop\SCEEC\高精介损\高电项目\bin\Debug\MaterialDesignColors.pdb
+C:\Users\My\Desktop\SCEEC\高精介损\高电项目\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\My\Desktop\SCEEC\高精介损\高电项目\bin\Debug\MaterialDesignThemes.Wpf.xml

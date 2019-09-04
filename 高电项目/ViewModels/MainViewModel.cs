@@ -11,38 +11,38 @@ namespace 高电项目.ViewModels
     public class MainViewModel : Screen
     {
         #region Ui parameter data
-        public int TestSpeed { get; set; }
-        public float TestIn { get; set; }
-        public float TestIx1 { get; set; }
-        public float TestIx2 { get; set; }
-        public float TestIx3 { get; set; }
-        public float TestIx4 { get; set; }
-        public float TestPh1 { get; set; }
-        public float TestPh2 { get; set; }
-        public float TestPh3 { get; set; }
-        public float TestPh4 { get; set; }
-        public float TestRn { get; set; }
-        public float TestRx1 { get; set; }
-        public float TestRx2 { get; set; }
-        public float TestRx3 { get; set; }
-        public float TestRx4 { get; set; }
-        public float TestFre { get; set; }
-        public float TestVoalte { get; set; }
-        public float TestPower { get; set; }
-        public double TestU0 { get; set; }
+        public string TestSpeed { get; set; }
+        public string TestIn { get; set; }
+        public string TestIx1 { get; set; }
+        public string TestIx2 { get; set; }
+        public string TestIx3 { get; set; }
+        public string TestIx4 { get; set; }
+        public string TestPh1 { get; set; }
+        public string TestPh2 { get; set; }
+        public string TestPh3 { get; set; }
+        public string TestPh4 { get; set; }
+        public string TestRn { get; set; }
+        public string TestRx1 { get; set; }
+        public string TestRx2 { get; set; }
+        public string TestRx3 { get; set; }
+        public string TestRx4 { get; set; }
+        public string TestFre { get; set; }
+        public string TestVoalte { get; set; }
+        public string TestPower { get; set; }
+        public string TestU0 { get; set; }
         public string TestCn { get; set; }
-        public double TestCx1 { get; set; }
-        public double TestCx2 { get; set; }
-        public double TestCx3 { get; set; }
-        public double TestCx4 { get; set; }
+        public string TestCx1 { get; set; }
+        public string TestCx2 { get; set; }
+        public string TestCx3 { get; set; }
+        public string TestCx4 { get; set; }
 
 
         public string Testθ0 { get; set; }
-        public double TestTan1 { get; set; }
-        public double TestTan2 { get; set; }
-        public double TestTan3 { get; set; }
-        public double TestTan4 { get; set; }
-        public int TestChannel { get; set; }
+        public string TestTan1 { get; set; }
+        public string TestTan2 { get; set; }
+        public string TestTan3 { get; set; }
+        public string TestTan4 { get; set; }
+        public string TestChannel { get; set; }
         #endregion
 
         #region 开始测试
@@ -77,33 +77,33 @@ namespace 高电项目.ViewModels
             if (result.Length == 55)
             {
                 ViewSources vs = new ViewSources(result);
-                TestFre = vs.TestFre;
-                TestVoalte = vs.TestVoalte;
-                TestIn = vs.TestIn;
-                TestIx1 = vs.TestIx1;
-                TestIx2 = vs.TestIx2;
-                TestIx3 = vs.TestIx3;
-                TestIx4 = vs.TestIx4;
-                TestPh1 = vs.TestPh1;
-                TestPh2 = vs.TestPh2;
-                TestPh3 = vs.TestPh3;
-                TestPh4 = vs.TestPh4;
-                TestRn = vs.TestRn;
-                TestRx1 = vs.TestRx1;
-                TestRx2 = vs.TestRx2;
-                TestRx3 = vs.TestRx3;
-                TestRx4 = vs.TestRx4;
-                TestSpeed = vs.TestSpeed;
-                TestU0 = vs.TestU0;
-                TestCx1 = vs.TestCx1;
-                TestCx2 = vs.TestCx2;
-                TestCx3 = vs.TestCx3;
-                TestCx4 = vs.TestCx4;
+                TestFre = vs.TestFre.ToString();
+                TestVoalte = vs.TestVoalte.ToString();
+                TestIn = vs.TestIn.ToString();
+                TestIx1 = vs.TestIx1.ToString();
+                TestIx2 = vs.TestIx2.ToString();
+                TestIx3 = vs.TestIx3.ToString();
+                TestIx4 = vs.TestIx4.ToString();
+                TestPh1 = vs.TestPh1.ToString();
+                TestPh2 = vs.TestPh2.ToString();
+                TestPh3 = vs.TestPh3.ToString();
+                TestPh4 = vs.TestPh4.ToString();
+                TestRn = vs.TestRn.ToString();
+                TestRx1 = vs.TestRx1.ToString();
+                TestRx2 = vs.TestRx2.ToString();
+                TestRx3 = vs.TestRx3.ToString();
+                TestRx4 = vs.TestRx4.ToString();
+                TestSpeed = vs.TestSpeed.ToString();
+                TestU0 = vs.TestU0.ToString();
+                TestCx1 = vs.TestCx1.ToString();
+                TestCx2 = vs.TestCx2.ToString();
+                TestCx3 = vs.TestCx3.ToString();
+                TestCx4 = vs.TestCx4.ToString();
                 Testθ0 = vs.Testθ0.ToString();
-                TestTan1 = vs.TestTan1;
-                TestTan2 = vs.TestTan2;
-                TestTan3 = vs.TestTan3;
-                TestTan4 = vs.TestTan4;
+                TestTan1 = vs.TestTan1.ToString();
+                TestTan2 = vs.TestTan2.ToString();
+                TestTan3 = vs.TestTan3.ToString();
+                TestTan4 = vs.TestTan4.ToString();
             }
         }
         #endregion
@@ -142,6 +142,8 @@ namespace 高电项目.ViewModels
             TestResult.WorkTest.ChangeTestSpeed((byte)fcn);
         }
         #endregion
+
+       
     }
 
 }

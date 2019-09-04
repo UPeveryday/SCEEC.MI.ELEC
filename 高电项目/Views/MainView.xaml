@@ -6,9 +6,11 @@
         xmlns:local="clr-namespace:高电项目.ViewModels"
         xmlns:st="https://github.com/canton7/Stylet"
         xmlns:s="clr-namespace:高电项目.ViewModels"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+
         mc:Ignorable="d"
         d:DataContext="{d:DesignInstance local:MainViewModel}"
-    Title="MainView" Height="450" Width="800" Loaded="{st:Action StartTest}"
+    Title="MainView" Height="550" Width="800" Loaded="{st:Action StartTest}"
     >
     <Window.Resources>
         <Style TargetType="TextBlock" x:Key="TextBoxStyle">
@@ -27,18 +29,16 @@
         </Style>
     </Window.Resources>
     <Grid>
+        
         <Grid.RowDefinitions>
-            <RowDefinition Height="3*"></RowDefinition>
-            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
+        <Grid Grid.Row="0" Grid.ColumnSpan="2">
             <Grid.RowDefinitions>
-                <RowDefinition Height="1*"></RowDefinition>
-                <RowDefinition Height="3*"></RowDefinition>
-                <RowDefinition Height="1*"></RowDefinition>
-                <RowDefinition Height="3*"></RowDefinition>
-                <RowDefinition Height="1*"></RowDefinition>
-                <RowDefinition Height="3*"></RowDefinition>
+                <RowDefinition Height="15*"></RowDefinition>
+                <RowDefinition Height="15*"></RowDefinition>
+                <RowDefinition Height="15*"></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
@@ -46,39 +46,38 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <TextBox Grid.Row="1" Grid.Column="0" Style="{StaticResource TextBoxStyle1}"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="1" Style="{StaticResource TextBoxStyle1}"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="2" Style="{StaticResource TextBoxStyle1}"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="3" Style="{StaticResource TextBoxStyle1}"></TextBox>
-            <TextBox Grid.Row="3" Grid.Column="0" Style="{StaticResource TextBoxStyle1}"></TextBox>
-            <TextBox Grid.Row="3" Grid.Column="1" Style="{StaticResource TextBoxStyle1}"></TextBox>
-            <TextBox Grid.Row="3" Grid.Column="2" Style="{StaticResource TextBoxStyle1}"></TextBox>
-            <TextBox Grid.Row="3" Grid.Column="3" Style="{StaticResource TextBoxStyle1}"></TextBox>
-            <TextBox Grid.Row="5" Grid.Column="0" Style="{StaticResource TextBoxStyle1}"></TextBox>
-            <TextBox Grid.Row="5" Grid.Column="1" Style="{StaticResource TextBoxStyle1}"></TextBox>
-            <TextBox Grid.Row="5" Grid.Column="2" Style="{StaticResource TextBoxStyle1}"></TextBox>
-            <TextBox Grid.Row="5" Grid.Column="3" Style="{StaticResource TextBoxStyle1}"></TextBox>
+            <TextBox  Grid.Row="0" Grid.Column="0" Text="{Binding TestU0 ,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Uo" materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                 materialDesign:HintAssist.FloatingScale="0.50" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="4,20" FontSize="28" />
+            <TextBox  Grid.Row="0" Grid.Column="1" Text="{Binding TestFre ,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  materialDesign:HintAssist.Hint="Frequency" materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                 materialDesign:HintAssist.FloatingScale="0.50" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Margin="4,20" FontSize="28" />
+            <TextBox  Grid.Row="0" Grid.Column="2"  Text="{Binding TestPower ,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  materialDesign:HintAssist.Hint="Power" materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                 materialDesign:HintAssist.FloatingScale="0.50" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="4,20"  FontSize="28" />
+            <TextBox  Grid.Row="0" Grid.Column="3" materialDesign:HintAssist.Hint="..." materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                 materialDesign:HintAssist.FloatingScale="0.50" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Margin="4,20" FontSize="28" />
+            <TextBox  Grid.Row="1" Grid.Column="0" Text="{Binding TestCx1 ,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  materialDesign:HintAssist.Hint="Cx1" materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                 materialDesign:HintAssist.FloatingScale="0.50" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Margin="4,20" FontSize="28" />
+            <TextBox  Grid.Row="1" Grid.Column="1"  Text="{Binding TestCx2 ,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Cx2" materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                 materialDesign:HintAssist.FloatingScale="0.50" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Margin="4,20" FontSize="28" />
+            <TextBox  Grid.Row="1" Grid.Column="2" Text="{Binding TestCx3 ,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  materialDesign:HintAssist.Hint="Cx3" materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                 materialDesign:HintAssist.FloatingScale="0.50" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="4,20"  FontSize="28" />
+            <TextBox  Grid.Row="1" Grid.Column="3"  Text="{Binding TestCx4 ,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Cx4" materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                 materialDesign:HintAssist.FloatingScale="0.50" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="4,20"  FontSize="28" />
 
-            <TextBlock Grid.Row="0" Grid.Column="0" Text="Uo" Style="{StaticResource TextBoxStyle}"></TextBlock>
-            <TextBlock Grid.Row="0" Grid.Column="1" Text="Frequency" Style="{StaticResource TextBoxStyle}"></TextBlock>
-            <TextBlock Grid.Row="0" Grid.Column="2" Text="Power" Style="{StaticResource TextBoxStyle}"></TextBlock>
-            <TextBlock Grid.Row="0" Grid.Column="3" Text="。。。" Style="{StaticResource TextBoxStyle}"></TextBlock>
+            <TextBox  Grid.Row="2" Grid.Column="0" Text="{Binding TestTan1 ,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  materialDesign:HintAssist.Hint="Tanθ₁ %" materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                 materialDesign:HintAssist.FloatingScale="0.50" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="4,20"  FontSize="28" />
+            <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding TestTan2 ,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  materialDesign:HintAssist.Hint="Tanθ₂ %" materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                 materialDesign:HintAssist.FloatingScale="0.50" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Margin="4,20" FontSize="28" />
+            <TextBox  Grid.Row="2" Grid.Column="2" Text="{Binding TestTan3 ,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  materialDesign:HintAssist.Hint="Tanθ₃ %" materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                 materialDesign:HintAssist.FloatingScale="0.50" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Margin="4,20" FontSize="28" />
+            <TextBox  Grid.Row="2" Grid.Column="3" Text="{Binding TestTan4 ,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  materialDesign:HintAssist.Hint="Tanθ4 %" materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                 materialDesign:HintAssist.FloatingScale="0.50" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="4,20"  FontSize="28" />
 
-            <TextBlock Grid.Row="2" Grid.Column="0" Text="Cx1" Style="{StaticResource TextBoxStyle}"></TextBlock>
-            <TextBlock Grid.Row="2" Grid.Column="1" Text="Cx2" Style="{StaticResource TextBoxStyle}"></TextBlock>
-            <TextBlock Grid.Row="2" Grid.Column="2" Text="Cx3" Style="{StaticResource TextBoxStyle}"></TextBlock>
-            <TextBlock Grid.Row="2" Grid.Column="3" Text="Cx4" Style="{StaticResource TextBoxStyle}"></TextBlock>
-
-            <TextBlock Grid.Row="4" Grid.Column="0" Text="Tanθ₁ %" Style="{StaticResource TextBoxStyle}"></TextBlock>
-            <TextBlock Grid.Row="4" Grid.Column="1" Text="Tanθ₂ %" Style="{StaticResource TextBoxStyle}"></TextBlock>
-            <TextBlock Grid.Row="4" Grid.Column="2" Text="Tanθ₃ %" Style="{StaticResource TextBoxStyle}"></TextBlock>
-            <TextBlock Grid.Row="4" Grid.Column="3" Text="Tanθ4 %" Style="{StaticResource TextBoxStyle}"></TextBlock>
         </Grid>
-        <Border Grid.Row="1" BorderThickness="1" BorderBrush="Azure"></Border>
-        <Grid Grid.Row="1" >
+        <Border Grid.Row="1" BorderThickness="1" BorderBrush="Azure" Grid.ColumnSpan="2"></Border>
+        <Grid Grid.Row="1" Grid.ColumnSpan="2" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="46*"></RowDefinition>
-                <RowDefinition Height="6*"/>
+                <RowDefinition Height="1*"/>
                 <RowDefinition Height="53*"></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
@@ -87,14 +86,19 @@
                 <ColumnDefinition Width="1*"></ColumnDefinition>
                 <ColumnDefinition Width="1*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <TextBox Grid.Row="0" Grid.Column="0" Text="{Binding TestCn,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxStyle1}" ></TextBox>
-            <TextBox Grid.Row="0" Grid.Column="1"  Text="{Binding Testθ0,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxStyle1}"  ></TextBox>
-            <TextBox Grid.Row="0" Grid.Column="2"  Text="{Binding TestChannel,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxStyle1}"  ></TextBox>
-            <TextBox Grid.Row="0" Grid.Column="3"  Text="{Binding TestSpeed,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxStyle1}"  ></TextBox>
-            <Button Grid.Column="0" Grid.Row="2" Click="{st:Action ChangeCn}" Content="Change Cn" Style="{DynamicResource DefaultButton}"></Button>
-            <Button Grid.Column="1" Grid.Row="2"  Click="{st:Action ChangeCnTan}" Content="Change Cn θ°" Style="{DynamicResource DefaultButton}"></Button>
-            <Button Grid.Column="2" Grid.Row="2"  Click="{st:Action ChangeChannel}" Content="Change Channel" Style="{DynamicResource DefaultButton}"></Button>
-            <Button Grid.Column="3" Grid.Row="2"  Click="{st:Action ChangeSpeed}" Content="Change Speed" Style="{DynamicResource DefaultButton}"></Button>
+            <TextBox  Grid.Row="0" Grid.Column="0" Text="{Binding TestCn,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="输入Cn"
+                  Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="15" Margin="5,0"/>
+            <TextBox  Grid.Row="0" Grid.Column="1"  Text="{Binding Testθ0,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="输入Cn,Tan" 
+                  Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="15"  Margin="5,0"/>
+            <TextBox  Grid.Row="0" Grid.Column="2" Text="{Binding TestChannel,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  materialDesign:HintAssist.Hint="输入Channel" 
+                  Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="15"  Margin="5,0"/>
+            <TextBox  Grid.Row="0" Grid.Column="3" Text="{Binding TestSpeed,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  materialDesign:HintAssist.Hint="输入Speed" 
+                  Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="15"  Margin="5,0"/>
+
+            <Button Grid.Column="0" Grid.Row="2" Click="{st:Action ChangeCn}" Content="Change Cn" Style="{StaticResource MaterialDesignRaisedButton}" Margin="20,5"></Button>
+            <Button Grid.Column="1" Grid.Row="2"  Click="{st:Action ChangeCnTan}" Content="Change Cn θ°" Style="{StaticResource MaterialDesignRaisedButton}" Margin="20,5"></Button>
+            <Button Grid.Column="2" Grid.Row="2"  Click="{st:Action ChangeChannel}" Content="Change Channel" Style="{StaticResource MaterialDesignRaisedButton}" Margin="20,5"></Button>
+            <Button Grid.Column="3" Grid.Row="2"  Click="{st:Action ChangeSpeed}" Content="Change Speed" Style="{StaticResource MaterialDesignRaisedButton}" Margin="20,5"></Button>
         </Grid>
     </Grid>
 </Window>
