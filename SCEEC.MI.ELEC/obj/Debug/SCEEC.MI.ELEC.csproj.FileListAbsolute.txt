@@ -1,0 +1,6 @@
+C:\Users\My\Desktop\SCEEC\高精介损\SCEEC.MI.ELEC\obj\Debug\SCEEC.MI.ELEC.csprojAssemblyReference.cache
+C:\Users\My\Desktop\SCEEC\高精介损\SCEEC.MI.ELEC\obj\Debug\SCEEC.MI.ELEC.csproj.CoreCompileInputs.cache
+C:\Users\My\Desktop\SCEEC\高精介损\SCEEC.MI.ELEC\bin\Debug\SCEEC.MI.ELEC.dll
+C:\Users\My\Desktop\SCEEC\高精介损\SCEEC.MI.ELEC\bin\Debug\SCEEC.MI.ELEC.pdb
+C:\Users\My\Desktop\SCEEC\高精介损\SCEEC.MI.ELEC\obj\Debug\SCEEC.MI.ELEC.dll
+C:\Users\My\Desktop\SCEEC\高精介损\SCEEC.MI.ELEC\obj\Debug\SCEEC.MI.ELEC.pdb

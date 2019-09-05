@@ -7,7 +7,6 @@
         xmlns:st="https://github.com/canton7/Stylet"
         xmlns:s="clr-namespace:高电项目.ViewModels"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-
         mc:Ignorable="d"
         d:DataContext="{d:DesignInstance local:MainViewModel}"
     Title="MainView" Height="550" Width="800" Loaded="{st:Action StartTest}"

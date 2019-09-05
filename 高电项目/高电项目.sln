@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCEEC.Numerics", "SCEEC.Num
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCode", "..\TestCode\TestCode.csproj", "{DB4E7E08-17CF-4B1A-B40E-452BCD93287E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCEEC.MI.ELEC", "..\SCEEC.MI.ELEC\SCEEC.MI.ELEC.csproj", "{6805F759-261C-46B7-BA7C-01D6A13EB855}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{DB4E7E08-17CF-4B1A-B40E-452BCD93287E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB4E7E08-17CF-4B1A-B40E-452BCD93287E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB4E7E08-17CF-4B1A-B40E-452BCD93287E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6805F759-261C-46B7-BA7C-01D6A13EB855}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6805F759-261C-46B7-BA7C-01D6A13EB855}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6805F759-261C-46B7-BA7C-01D6A13EB855}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6805F759-261C-46B7-BA7C-01D6A13EB855}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

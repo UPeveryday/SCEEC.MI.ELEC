@@ -1,0 +1,17 @@
+﻿<Window x:Class="高电项目.Views.MainHignView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:高电项目.Views"
+        xmlns:local1="clr-namespace:高电项目.ViewModels"
+        xmlns:s="https://github.com/canton7/Stylet"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance local1:MainViewModel}"
+        Title="MainHignView" Height="450" Width="800" Loaded="{s:Action Loading}">
+    <Grid>
+
+        <TextBlock Height="30" Width="100" Text="{Binding Text ,UpdateSourceTrigger=PropertyChanged}" ></TextBlock>
+        <ComboBox x:Name="comboBox" SelectedIndex="1" ItemsSource="{Binding Message}" HorizontalAlignment="Left" Margin="210,241,0,0" VerticalAlignment="Top" Width="120"/>
+    </Grid>
+</Window>

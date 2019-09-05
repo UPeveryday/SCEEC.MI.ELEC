@@ -73,7 +73,7 @@ namespace SCEEC.MI.High_Precision
         }
         ~ViewSources()
         {
-            GC.Collect();
+           // GC.Collect();
         }
     }
 }

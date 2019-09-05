@@ -37,12 +37,7 @@ namespace SCEEC.MI.High_Precision
     public class High_PrecisionClass
     {
         public PortClass LocalPrecision = new PortClass();
-
-
-
         public readonly string ComPort;
-
-
         public High_PrecisionClass()
         {
             string[] cp = GetPortNames();

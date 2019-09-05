@@ -83,10 +83,15 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Models\ViewsSources.cs" />
     <Compile Include="ViewModels\KeyBoardViewModel.cs" />
+    <Compile Include="ViewModels\MainHignViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Views\KeyBoardView.xaml.cs">
       <DependentUpon>KeyBoardView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainHignView.xaml.cs">
+      <DependentUpon>MainHignView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
@@ -136,6 +141,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\MainHignView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\MainView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -143,9 +152,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DLL\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SCEEC.MI.ELEC\SCEEC.MI.ELEC.csproj">
+      <Project>{6805f759-261c-46b7-ba7c-01d6a13eb855}</Project>
+      <Name>SCEEC.MI.ELEC</Name>
+    </ProjectReference>
     <ProjectReference Include="SCEEC.MI.High_Precision\SCEEC.MI.High_Precision.csproj">
       <Project>{769d33cc-281e-4114-bfcd-d4df1bc58bde}</Project>
       <Name>SCEEC.MI.High_Precision</Name>

@@ -65,3 +65,7 @@ C:\Users\My\Desktop\SCEEC\高精介损\高电项目\bin\Debug\ShowMeTheXAML.dll
 C:\Users\My\Desktop\SCEEC\高精介损\高电项目\bin\Debug\MaterialDesignColors.pdb
 C:\Users\My\Desktop\SCEEC\高精介损\高电项目\bin\Debug\MaterialDesignThemes.Wpf.pdb
 C:\Users\My\Desktop\SCEEC\高精介损\高电项目\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\My\Desktop\SCEEC\高精介损\高电项目\bin\Debug\SCEEC.MI.ELEC.dll
+C:\Users\My\Desktop\SCEEC\高精介损\高电项目\bin\Debug\SCEEC.MI.ELEC.pdb
+C:\Users\My\Desktop\SCEEC\高精介损\高电项目\obj\Debug\Views\MainHignView.g.cs
+C:\Users\My\Desktop\SCEEC\高精介损\高电项目\obj\Debug\Views\MainHignView.baml
